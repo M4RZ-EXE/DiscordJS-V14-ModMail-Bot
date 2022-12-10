@@ -301,6 +301,7 @@ client.on('interactionCreate', async (interaction) => {
             )
             .setTitle("List of available commands:")
             .addFields(totalCommands)
+            .setColor('White')
         ]
       }
     ).catch(() => { });
