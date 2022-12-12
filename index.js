@@ -51,7 +51,7 @@ const client = new Client(
     ],
     presence: {
       activities: [{
-        name: "/latee",
+        name: "/baal",
         type: 3,
       }]
     },
