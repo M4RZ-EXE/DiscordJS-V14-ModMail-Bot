@@ -1,7 +1,7 @@
 module.exports = {
   Client: {
     TOKEN: "", // Your bot's TOKEN. Please use this only in VISUAL STUDIO CODE, not in REPLIT. [OPTIONAL]
-    ID: "10517349322187285699" // Your bot's ID. [REQUIRED]
+    ID: "1051734932218728569" // Your bot's ID. [REQUIRED]
   },
 
   Handler: {
