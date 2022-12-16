@@ -238,8 +238,8 @@ client.on('interactionCreate', async (interaction) => {
                 )
               }
             )
-            .setTitle("Help Menu:")
-            .setDescription(`This is the help menu of the ${bold("ModMail Bot v" + projectVersion)}.`)
+            .setTitle("here are my commands!")
+            .setDescription(``)
             .addFields(
               {
                 name: "Setup the system:",
@@ -262,9 +262,10 @@ client.on('interactionCreate', async (interaction) => {
             .setColor('Blue')
             .setFooter(
               {
-                text: "Github Repo by: T.F.A#7524"
+                text: "Github Repo by: T.F.A#7524",
+                timestamp: true
               }
-            )
+            ),
         ],
         ephemeral: true
       }
@@ -301,7 +302,7 @@ client.on('interactionCreate', async (interaction) => {
             )
             .setTitle("List of available commands:")
             .addFields(totalCommands)
-            .setColor('White')
+            .setColor('Blue')
         ]
       }
     ).catch(() => { });
@@ -324,7 +325,7 @@ client.on('interactionCreate', async (interaction) => {
           new EmbedBuilder()
             .setTitle('Missing Permissions:')
             .setDescription(`Sorry, I can't let you to use this command because you need ${bold(config.Modmail.INTERACTION_COMMAND_PERMISSIONS.join(', '))} permissions!`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -337,7 +338,7 @@ client.on('interactionCreate', async (interaction) => {
         embeds: [
           new EmbedBuilder()
             .setDescription(`That user is already banned.`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -351,7 +352,7 @@ client.on('interactionCreate', async (interaction) => {
         embeds: [
           new EmbedBuilder()
             .setDescription(`That user has been successfully banned. Reason: ${bold(correctReason)}`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -369,7 +370,7 @@ client.on('interactionCreate', async (interaction) => {
           new EmbedBuilder()
             .setTitle('Missing Permissions:')
             .setDescription(`Sorry, I can't let you to use this command because you need ${bold(config.Modmail.INTERACTION_COMMAND_PERMISSIONS.join(', '))} permissions!`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -382,7 +383,7 @@ client.on('interactionCreate', async (interaction) => {
         embeds: [
           new EmbedBuilder()
             .setDescription(`That user is already unbanned.`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -396,7 +397,7 @@ client.on('interactionCreate', async (interaction) => {
         embeds: [
           new EmbedBuilder()
             .setDescription(`That user has been successfully unbanned.`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -412,7 +413,7 @@ client.on('interactionCreate', async (interaction) => {
           new EmbedBuilder()
             .setTitle('Missing Permissions:')
             .setDescription(`Sorry, I can't let you to use this command because you need ${bold(config.Modmail.INTERACTION_COMMAND_PERMISSIONS.join(', '))} permissions!`)
-            .setColor('White')
+            .setColor('Blue')
         ],
         ephemeral: true
       }
@@ -428,7 +429,7 @@ client.on('interactionCreate', async (interaction) => {
           embeds: [
             new EmbedBuilder()
               .setDescription(`There is already a modmail category named "ModMail". Replace the old category by a new category?\n\n:warning: If you click on **Replace**, all the mails text channels will be outside of category.`)
-              .setColor('White')
+              .setColor('Blue')
               .setFooter(
                 {
                   text: "This request expires in 10 seconds, buttons won't respond to your actions after 10 seconds."
@@ -465,7 +466,7 @@ client.on('interactionCreate', async (interaction) => {
               embeds: [
                 new EmbedBuilder()
                   .setDescription(`Creating a new category... This may take a while!`)
-                  .setColor('White')
+                  .setColor('Blue')
               ],
               components: [
                 new ActionRowBuilder()
@@ -531,7 +532,7 @@ client.on('interactionCreate', async (interaction) => {
                       text: "WARN: Please check the roles in the category channel, errors could happen in anytime."
                     }
                   )
-                  .setColor('White')
+                  .setColor('Blue')
               ]
             }
           ).catch(() => { });
@@ -548,7 +549,7 @@ client.on('interactionCreate', async (interaction) => {
                       text: "You can now click on \"Dismiss message\" below this embed message."
                     }
                   )
-                  .setColor('White')
+                  .setColor('Blue')
               ],
               components: [
                 new ActionRowBuilder()
@@ -579,7 +580,7 @@ client.on('interactionCreate', async (interaction) => {
           embeds: [
             new EmbedBuilder()
               .setDescription(`Creating a new category... This may take a while!`)
-              .setColor('White')
+              .setColor('Blue')
           ]
         }
       ).catch(() => { });
@@ -627,7 +628,7 @@ client.on('interactionCreate', async (interaction) => {
                   text: "WARN: Please check the roles in the category channel, errors could happen in anytime."
                 }
               )
-              .setColor('White')
+              .setColor('Blue')
           ]
         }
       ).catch(() => { });
@@ -679,7 +680,7 @@ client.on('messageCreate', async (message) => {
         embeds: [
           new EmbedBuilder()
             .setDescription("The system is not ready yet.")
-            .setColor("White")
+            .setColor("Blue")
         ]
       }
     );
@@ -692,7 +693,7 @@ client.on('messageCreate', async (message) => {
         .addFields(
           { name: "Message", value: `${message.content || italic("(No message was sent, probably a media/embed message was sent, or an error)")}` }
         )
-        .setColor('White')
+        .setColor('Blue')
         .setFooter(
           {
             text: "You can click on \"Close\" button to close this mail."
@@ -737,7 +738,7 @@ client.on('messageCreate', async (message) => {
           { name: "Message", value: `${message.content.substr(0, 4096) || italic("(No message was sent, probably a media/embed message was sent, or an error)")}` },
           { name: "Created on", value: `${new Date().toLocaleString()}` },
         )
-        .setColor('White')
+        .setColor('Blue')
 
       if (message.attachments.size) {
         embed.setImage(message.attachments.map(img => img)[0].proxyURL);
@@ -781,7 +782,7 @@ client.on('messageCreate', async (message) => {
       let embed = new EmbedBuilder()
         .setAuthor({ name: `${message.author.tag}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
         .setDescription(message.content.substr(0, 4096) || italic("(No message was sent, probably a media/embed message was sent, or an error)"))
-        .setColor('White');
+        .setColor('Blue');
 
       if (message.attachments.size) embed.setImage(message.attachments.map(img => img)[0].proxyURL);
 
@@ -807,7 +808,7 @@ client.on('messageCreate', async (message) => {
       let embed = new EmbedBuilder()
         .setAuthor({ name: `${message.author.tag}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
         .setDescription(message.content.substr(0, 4096) || italic("(No message was sent, probably a media/embed message was sent, or an error)"))
-        .setColor('White');
+        .setColor('Blue');
 
       if (message.attachments.size) embed.setImage(message.attachments.map(img => img)[0].proxyURL);
 
@@ -867,7 +868,7 @@ client.on('interactionCreate', async (interaction) => {
           embeds: [
             new EmbedBuilder()
               .setDescription(`Already closed by a staff member or by you.`)
-              .setColor('White')
+              .setColor('Blue')
           ],
           ephemeral: true
         }
@@ -884,7 +885,7 @@ client.on('interactionCreate', async (interaction) => {
                 new EmbedBuilder()
                   .setTitle('Mail Closed:')
                   .setDescription(`Your mail has been successfully closed.`)
-                  .setColor('White')
+                  .setColor('Blue')
               ]
             }
           ).catch(() => { });
@@ -923,7 +924,7 @@ client.on('interactionCreate', async (interaction) => {
                   .addFields(
                     { name: "Reason", value: `${italic(reason)}` }
                   )
-                  .setColor('White')
+                  .setColor('Blue')
               ]
             }
           ).catch(() => { });
