@@ -259,7 +259,7 @@ client.on('interactionCreate', async (interaction) => {
               },
              
             )
-            .setColor('LightSteelBlue')
+            .setColor('Blue')
             .setFooter(
               {
                 text: "Github Repo by: T.F.A#7524"
