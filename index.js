@@ -263,7 +263,6 @@ client.on('interactionCreate', async (interaction) => {
             .setFooter(
               {
                 text: "Github Repo by: T.F.A#7524",
-                timestamp: true
               }
             ),
         ],
